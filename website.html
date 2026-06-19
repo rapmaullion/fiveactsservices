@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Five Acts Services Corporation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --green:#10B86B;
+    --green-dark:#0D9D5B;
+    --black:#111111;
+    --gray:#6B7280;
+    --light:#F8FAFC;
+    --white:#FFFFFF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:var(--black);
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    height:55px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--black);
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--green);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 80px;
+
+    background:
+    radial-gradient(
+        circle at top right,
+        rgba(16,184,107,.15),
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at bottom left,
+        rgba(16,184,107,.12),
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #f4fff8
+    );
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    background:#DCFCE7;
+    color:var(--green-dark);
+    padding:10px 20px;
+    border-radius:50px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--green);
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    color:var(--gray);
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--green);
+    color:white;
+    padding:15px 30px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:var(--green-dark);
+    transform:translateY(-3px);
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.6rem;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:var(--gray);
+    margin-bottom:50px;
+}
+
+/* ABOUT */
+
+.about{
+    max-width:950px;
+    margin:auto;
+    text-align:center;
+    line-height:1.9;
+    color:var(--gray);
+}
+
+/* PARTNER */
+
+.partner{
+    background:white;
+    border-radius:24px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.partner-badge{
+    display:inline-block;
+    background:var(--green);
+    color:white;
+    padding:10px 20px;
+    border-radius:50px;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+/* SERVICES */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:var(--green);
+    margin-bottom:12px;
+}
+
+/* VALUES */
+
+.values{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.value-card{
+    text-align:center;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+}
+
+.value-card h3{
+    color:var(--green);
+    margin-bottom:10px;
+}
+
+/* CLIENT BANNER */
+
+.logo-banner{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    padding:20px 0;
+}
+
+.logo-track{
+    display:flex;
+    gap:60px;
+    width:max-content;
+    animation:scrollClients 35s linear infinite;
+}
+
+.logo-track span{
+    font-size:1.1rem;
+    font-weight:600;
+    color:var(--gray);
+    white-space:nowrap;
+}
+
+.logo-track:hover{
+    animation-play-state:paused;
+}
+
+@keyframes scrollClients{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact-card{
+    background:white;
+    max-width:700px;
+    margin:auto;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.linkedin-btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#0077B5;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--black);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.6rem;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.logo{
+    height:45px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<img src="logo.png"
+alt="Five Acts Services Corporation"
+class="logo">
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#clients">Clients</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+Performance-Based • Value-Focused
+</div>
+
+<h1>
+Empowering Organizations Through
+<span>Operational Excellence</span>
+</h1>
+
+<p>
+Five Acts Services Corporation is a Philippines-based outsourcing company delivering measurable outcomes through customer support, certification operations, remote exam proctoring, and administrative services.
+</p>
+
+<a href="#about" class="btn">
+Discover More
+</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">
+About Five Acts
+</h2>
+
+<div class="about">
+
+<p>
+We are a performance-based, value-focused function outsourcing company based in the Philippines. We partner with you in defining what success looks like and relentlessly improve upon our services to deliver measurable achievements towards your goals.
+</p>
+
+<br>
+
+<p>
+It all starts with ensuring that we staff the right team members with the most critical skills to do the work effectively. From customer service to remote exam proctoring to remote administrative assistance, we are here to serve you and your customers.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="partner">
+
+<div class="partner-badge">
+Strategic Partner
+</div>
+
+<h2>Certiverse</h2>
+
+<br>
+
+<p>
+Five Acts Services Corporation proudly partners with Certiverse in supporting modern certification programs through operational excellence, candidate support, remote examination services, and scalable service delivery.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="container">
+
+<h2 class="section-title">
+Our Services
+</h2>
+
+<p class="section-subtitle">
+Flexible solutions designed around your business goals.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Remote Exam Proctoring</h3>
+<p>Secure, scalable, and professional examination monitoring services.</p>
+</div>
+
+<div class="card">
+<h3>Certification Operations</h3>
+<p>Candidate support, scheduling assistance, and certification administration.</p>
+</div>
+
+<div class="card">
+<h3>Customer Support</h3>
+<p>Dedicated support teams focused on customer satisfaction and success.</p>
+</div>
+
+<div class="card">
+<h3>Administrative Assistance</h3>
+<p>Skilled professionals supporting daily business operations remotely.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Why Five Acts?
+</h2>
+
+<div class="values">
+
+<div class="value-card">
+<h3>Performance Driven</h3>
+<p>Focused on measurable business outcomes.</p>
+</div>
+
+<div class="value-card">
+<h3>Partnership Mindset</h3>
+<p>We become an extension of your team.</p>
+</div>
+
+<div class="value-card">
+<h3>Continuous Improvement</h3>
+<p>Relentlessly optimizing processes and service quality.</p>
+</div>
+
+<div class="value-card">
+<h3>Customer Success</h3>
+<p>Delivering exceptional experiences for your customers.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="clients">
+
+<div class="container">
+
+<h2 class="section-title">
+Trusted By Industry Leaders
+</h2>
+
+<p class="section-subtitle">
+Supporting certification programs and technology companies worldwide.
+</p>
+
+<div class="logo-banner">
+
+<div class="logo-track">
+
+<span>NVIDIA</span>
+<span>Atlassian</span>
+<span>Stripe</span>
+<span>HashiCorp</span>
+<span>Webflow</span>
+<span>Braze</span>
+<span>Smartsheet</span>
+<span>Toast</span>
+<span>OpenText</span>
+<span>DocuSign</span>
+<span>Camunda</span>
+<span>Collibra</span>
+<span>Proofpoint</span>
+<span>WindRiver</span>
+<span>WellSky</span>
+<span>VastData</span>
+
+<span>NVIDIA</span>
+<span>Atlassian</span>
+<span>Stripe</span>
+<span>HashiCorp</span>
+<span>Webflow</span>
+<span>Braze</span>
+<span>Smartsheet</span>
+<span>Toast</span>
+<span>OpenText</span>
+<span>DocuSign</span>
+<span>Camunda</span>
+<span>Collibra</span>
+<span>Proofpoint</span>
+<span>WindRiver</span>
+<span>WellSky</span>
+<span>VastData</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+Contact Us
+</h2>
+
+<div class="contact-card">
+
+<h3>Five Acts Services Corporation</h3>
+
+<br>
+
+<p>
+26th Floor, Insular Life Corporate Center<br>
+Insular Drive, Filinvest City<br>
+Alabang, Muntinlupa, Philippines
+</p>
+
+<a
+href="https://ph.linkedin.com/company/five-acts-services-corporation"
+target="_blank"
+class="linkedin-btn">
+Visit Our LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Five Acts Services Corporation
+</p>
+
+<p>
+Performance-Based • Value-Focused
+</p>
+
+</footer>
+
+</body>
+</html>
